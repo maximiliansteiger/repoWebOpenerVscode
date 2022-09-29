@@ -1,0 +1,45 @@
+{
+    "name": "open VsCode",
+    "description": "fastest and easiest way to open a github repository in vscode web",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "css": [
+                "content.css"
+            ]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "tabs",
+        "storage",
+        "activeTab",
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://github.com/*"
+    ],
+    "action": {
+        "default_icon": {
+            "16": "icon.png",
+            "24": "icon.png",
+            "32": "icon.png"
+        },
+        "default_title": "open VsCode",
+        "default_popup": "popup.html"
+    },
+    "icons": {
+        "16": "icon.png",
+        "24": "icon.png",
+        "32": "icon.png"
+    }
+}
